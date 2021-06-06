@@ -1,4 +1,4 @@
-# rp-group-50-common
+# fft
 
 Dataset file structure (this corresponds to the filepath used in the code)
 
