@@ -1,0 +1,35 @@
+{
+    "os": "Linux-5.8.0-53-generic-x86_64-with-glibc2.29",
+    "python": "3.8.5",
+    "heartbeatAt": "2021-06-04T21:52:03.493474",
+    "startedAt": "2021-06-04T21:52:02.136518",
+    "docker": null,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--img",
+        "1024",
+        "--batch",
+        "1",
+        "--epochs",
+        "10",
+        "--data",
+        "wheat_head_data.yaml",
+        "--weights",
+        "yolov5s.pt",
+        "--nosave",
+        "--cache"
+    ],
+    "state": "running",
+    "program": "yolov5/train.py",
+    "codePath": "yolov5/train.py",
+    "git": {
+        "remote": "https://gitlab.ewi.tudelft.nl/cse3000/2020-2021/rp-group-50/rp-group-50-common.git",
+        "commit": "4dc22efec766054b707f1cdc697a03c2c805cb00"
+    },
+    "email": "peter_99@abv.bg",
+    "root": "/home/petar/Documents/PythonProjects/rp-group-50-common",
+    "host": "petar-HP-ZBook-Studio-G5",
+    "username": "petar",
+    "executable": "/home/petar/Documents/PythonProjects/rp-group-50-common/venv/bin/python"
+}

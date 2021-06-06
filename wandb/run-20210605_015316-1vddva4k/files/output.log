@@ -1,0 +1,681 @@
+Overriding model.yaml nc=80 with nc=1
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Focus                     [3, 32, 3]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  1    156928  models.common.C3                        [128, 128, 3]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  1    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1    656896  models.common.SPP                       [512, 512, [5, 9, 13]]
+  9                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     16182  models.yolo.Detect                      [1, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+Model Summary: 283 layers, 7063542 parameters, 7063542 gradients, 16.4 GFLOPs
+Transferred 356/362 items from yolov5s.pt
+Scaled weight_decay = 0.0005
+Optimizer groups: 62 .bias, 62 conv.weight, 59 other
+[34m[1mtrain: [39m[22mScanning 'train_data/labels/train' images and labels... 35 found, 0 missing, 0 empty, 0 corrupted: 100% 35/35 [00:00<00:00, 2008.99it/s]
+[34m[1mtrain: [39m[22mNew cache created: train_data/labels/train.cache
+[34m[1mtrain: [39m[22mCaching images (0.1GB): 100% 35/35 [00:00<00:00, 301.15it/s]
+[34m[1mval: [39m[22mScanning 'train_data/labels/val' images and labels... 10 found, 0 missing, 0 empty, 0 corrupted: 100% 10/10 [00:00<00:00, 1705.21it/s]
+[34m[1mval: [39m[22mNew cache created: train_data/labels/val.cache
+[34m[1mval: [39m[22mCaching images (0.0GB): 100% 10/10 [00:00<00:00, 206.78it/s]
+Plotting labels...
+Image sizes 1024 train, 1024 test
+Using 0 dataloader workers
+Logging results to runs/train/exp7
+Starting training for 15 epochs...
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0% 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      0/14        0G    0.1102     0.432         0    0.5422        38      1024: 100% 35/35 [01:34<00:00,  2.71s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:16<00:04,  4.11s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:20<00:00,  4.05s/it]
+Images sizes do not match. This will causes images to be display incorrectly in the UI.
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      1/14        0G    0.1017    0.2951         0    0.3968       108      1024: 100% 35/35 [01:27<00:00,  2.51s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:15<00:03,  3.78s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:19<00:00,  3.81s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      2/14        0G    0.1058    0.3784         0    0.4842       108      1024: 100% 35/35 [01:27<00:00,  2.51s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:17<00:04,  4.22s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:21<00:00,  4.29s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      3/14        0G    0.1037    0.3583         0    0.4619       161      1024: 100% 35/35 [01:27<00:00,  2.50s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:16<00:04,  4.06s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:20<00:00,  4.10s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      4/14        0G    0.1033    0.4094         0    0.5128        43      1024: 100% 35/35 [01:27<00:00,  2.51s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:25<00:00,  5.09s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0% 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      5/14        0G   0.09886    0.3661         0     0.465        27      1024: 100% 35/35 [01:27<00:00,  2.51s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:22<00:05,  5.45s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:28<00:00,  5.64s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      6/14        0G   0.09822    0.4138         0    0.5121        56      1024: 100% 35/35 [01:27<00:00,  2.50s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:23<00:05,  5.86s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:30<00:00,  6.06s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      7/14        0G   0.09746    0.4254         0    0.5229        28      1024: 100% 35/35 [01:28<00:00,  2.53s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:25<00:06,  6.44s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:30<00:00,  6.11s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      8/14        0G   0.09512    0.3715         0    0.4667        46      1024: 100% 35/35 [01:28<00:00,  2.53s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:22<00:05,  5.71s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:28<00:00,  5.73s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      9/14        0G   0.09311    0.3858         0    0.4789       102      1024: 100% 35/35 [01:27<00:00,  2.51s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:22<00:05,  5.51s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.52s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     10/14        0G   0.09375    0.4049         0    0.4987       111      1024: 100% 35/35 [01:28<00:00,  2.52s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.46s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0% 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     11/14        0G   0.09184    0.3695         0    0.4613        48      1024: 100% 35/35 [01:29<00:00,  2.55s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.49s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0% 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     12/14        0G   0.09273    0.3844         0    0.4771        81      1024: 100% 35/35 [01:28<00:00,  2.52s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.46s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+  0% 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     13/14        0G   0.09395    0.4131         0     0.507        44      1024: 100% 35/35 [01:28<00:00,  2.52s/it]
+
+
+
+
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:21<00:05,  5.43s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.45s/it]
+     Epoch   gpu_mem       box       obj       cls     total    labels  img_size
+     14/14        0G   0.08353    0.2774         0    0.3609        37      1024:   3% 1/35 [00:02<01:32,  2.71s/it]
+     14/14        0G   0.08099    0.2344         0    0.3154        17      1024:   6% 2/35 [00:05<01:28,  2.69s/it]
+     14/14        0G   0.08285    0.2727         0    0.3556        49      1024:   9% 3/35 [00:07<01:23,  2.61s/it]
+     14/14        0G   0.08581    0.2694         0    0.3553        35      1024:  11% 4/35 [00:10<01:20,  2.59s/it]
+     14/14        0G   0.08655    0.2915         0    0.3781        46      1024:  14% 5/35 [00:12<01:17,  2.57s/it]
+     14/14        0G   0.08954    0.3412         0    0.4307       100      1024:  17% 6/35 [00:15<01:14,  2.55s/it]
+     14/14        0G   0.08975    0.3678         0    0.4576        79      1024:  20% 7/35 [00:18<01:11,  2.55s/it]
+     14/14        0G   0.08906    0.3558         0    0.4448        32      1024:  23% 8/35 [00:20<01:08,  2.54s/it]
+     14/14        0G   0.08815    0.3481         0    0.4363        34      1024:  26% 9/35 [00:23<01:05,  2.52s/it]
+     14/14        0G   0.08756    0.3463         0    0.4339        36      1024:  29% 10/35 [00:25<01:03,  2.55s/it]
+     14/14        0G   0.08921    0.3799         0    0.4691       120      1024:  31% 11/35 [00:28<01:00,  2.54s/it]
+     14/14        0G   0.08891    0.3672         0    0.4561        25      1024:  34% 12/35 [00:30<00:57,  2.52s/it]
+     14/14        0G   0.08907    0.3883         0    0.4773        92      1024:  37% 13/35 [00:33<00:55,  2.52s/it]
+     14/14        0G   0.08864    0.3752         0    0.4639        22      1024:  40% 14/35 [00:35<00:52,  2.50s/it]
+     14/14        0G   0.08831    0.3671         0    0.4554        30      1024:  43% 15/35 [00:38<00:49,  2.49s/it]
+     14/14        0G   0.08947     0.385         0    0.4745       115      1024:  46% 16/35 [00:40<00:47,  2.50s/it]
+     14/14        0G   0.08943    0.3778         0    0.4672        31      1024:  49% 17/35 [00:43<00:45,  2.50s/it]
+     14/14        0G    0.0896    0.3745         0    0.4641        45      1024:  51% 18/35 [00:45<00:42,  2.50s/it]
+     14/14        0G   0.08981    0.3697         0    0.4595        36      1024:  54% 19/35 [00:48<00:39,  2.50s/it]
+     14/14        0G    0.0895    0.3752         0    0.4647        63      1024:  57% 20/35 [00:50<00:37,  2.49s/it]
+     14/14        0G   0.08969     0.372         0    0.4617        43      1024:  60% 21/35 [00:53<00:34,  2.49s/it]
+     14/14        0G   0.08952    0.3633         0    0.4529        20      1024:  63% 22/35 [00:55<00:32,  2.49s/it]
+     14/14        0G   0.08996    0.3653         0    0.4553        58      1024:  66% 23/35 [00:58<00:29,  2.49s/it]
+     14/14        0G   0.09065    0.3779         0    0.4686       111      1024:  69% 24/35 [01:00<00:27,  2.49s/it]
+     14/14        0G   0.09056    0.3705         0     0.461        18      1024:  71% 25/35 [01:03<00:24,  2.49s/it]
+     14/14        0G   0.09025    0.3703         0    0.4605        45      1024:  74% 26/35 [01:05<00:22,  2.51s/it]
+     14/14        0G   0.09053    0.3756         0    0.4661        73      1024:  77% 27/35 [01:08<00:20,  2.51s/it]
+     14/14        0G   0.09031    0.3694         0    0.4597        24      1024:  80% 28/35 [01:10<00:17,  2.52s/it]
+     14/14        0G   0.09114    0.3738         0    0.4649        96      1024:  83% 29/35 [01:13<00:15,  2.55s/it]
+     14/14        0G   0.09045    0.3642         0    0.4547         2      1024:  86% 30/35 [01:15<00:12,  2.53s/it]
+     14/14        0G   0.09067    0.3652         0    0.4558        57      1024:  89% 31/35 [01:18<00:10,  2.55s/it]
+     14/14        0G   0.09079    0.3633         0    0.4541        38      1024:  91% 32/35 [01:20<00:07,  2.55s/it]
+     14/14        0G   0.09068    0.3598         0    0.4505        28      1024:  94% 33/35 [01:23<00:05,  2.54s/it]
+     14/14        0G   0.09049    0.3554         0    0.4459        23      1024:  97% 34/35 [01:25<00:02,  2.52s/it]
+     14/14        0G   0.09047    0.3524         0    0.4428        32      1024: 100% 35/35 [01:28<00:00,  2.53s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  20% 1/5 [00:05<00:22,  5.63s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  40% 2/5 [00:11<00:16,  5.63s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  60% 3/5 [00:16<00:11,  5.57s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95:  80% 4/5 [00:22<00:05,  5.55s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+               Class      Images      Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+15 epochs completed in 0.478 hours.   Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+15 epochs completed in 0.478 hours.   Labels           P           R      mAP@.5  mAP@.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+Optimizer stripped from runs/train/exp7/weights/last.pt, 14.5MB
+Images sizes do not match. This will causes images to be display incorrectly in the UI.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+Images sizes do not match. This will causes images to be display incorrectly in the UI.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
+Images sizes do not match. This will causes images to be display incorrectly in the UI.5:.95: 100% 5/5 [00:27<00:00,  5.59s/it]
